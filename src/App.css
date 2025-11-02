@@ -1,38 +1,109 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  color: #1f2933;
+  background-color: #f5f7fa;
+}
+
+.AppHeader {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  padding: 1.5rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.AppBrand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.AppBrand-highlight {
+  color: #2563eb;
+}
+
+.AppNav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.AppNav a {
+  text-decoration: none;
+  color: #1f2933;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.AppNav a:hover {
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.AppContent {
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.LegalPage {
+  max-width: 780px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.LegalPage h1 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.LegalPage-meta {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.LegalPage-subtitle {
+  color: #4b5563;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.LegalPage section + section {
+  margin-top: 1.75rem;
+}
+
+.LegalPage h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.LegalPage p {
+  line-height: 1.7;
+  color: #374151;
+}
+
+@media (max-width: 640px) {
+  .AppHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .AppContent {
+    padding: 2rem 1rem;
+  }
+
+  .LegalPage {
+    padding: 2rem 1.5rem;
   }
 }
