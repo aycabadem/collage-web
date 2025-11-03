@@ -8,6 +8,7 @@ import {
 import "./App.css";
 import TermsOfUse from "./pages/TermsOfUse";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Support from "./pages/Support";
 
 function App() {
   return (
@@ -20,12 +21,16 @@ function App() {
           <nav className="AppNav">
             <Link to="/custom-photo-collage/terms">Terms of Use</Link>
             <Link to="/custom-photo-collage/privacy">Privacy Policy</Link>
+            <Link to="/custom-photo-collage/support">Support</Link>
           </nav>
         </header>
 
         <main className="AppContent">
           <Routes>
-            <Route path="/" element={<Navigate to="/terms" replace />} />
+            <Route
+              path="/"
+              element={<Navigate to="/custom-photo-collage/terms" replace />}
+            />
             <Route
               path="/custom-photo-collage/terms"
               element={<TermsOfUse />}
@@ -33,6 +38,10 @@ function App() {
             <Route
               path="/custom-photo-collage/privacy"
               element={<PrivacyPolicy />}
+            />
+            <Route
+              path="/custom-photo-collage/support"
+              element={<Support />}
             />
           </Routes>
         </main>
