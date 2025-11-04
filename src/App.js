@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
   Navigate,
@@ -19,30 +19,18 @@ function App() {
             <span className="AppBrand-highlight">Custom Photo Collage</span>
           </div>
           <nav className="AppNav">
-            <Link to="/custom-photo-collage/terms">Terms of Use</Link>
-            <Link to="/custom-photo-collage/privacy">Privacy Policy</Link>
-            <Link to="/custom-photo-collage/support">Support</Link>
+            <Link to="/terms">Terms of Use</Link>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/support">Support</Link>
           </nav>
         </header>
 
         <main className="AppContent">
           <Routes>
-            <Route
-              path="/"
-              element={<Navigate to="/custom-photo-collage/terms" replace />}
-            />
-            <Route
-              path="/custom-photo-collage/terms"
-              element={<TermsOfUse />}
-            />
-            <Route
-              path="/custom-photo-collage/privacy"
-              element={<PrivacyPolicy />}
-            />
-            <Route
-              path="/custom-photo-collage/support"
-              element={<Support />}
-            />
+            <Route path="/" element={<Navigate to="/terms" replace />} />
+            <Route path="/terms" element={<TermsOfUse />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
+            <Route path="/support" element={<Support />} />
           </Routes>
         </main>
       </div>
